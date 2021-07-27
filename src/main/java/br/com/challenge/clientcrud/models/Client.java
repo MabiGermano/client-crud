@@ -1,5 +1,6 @@
 package br.com.challenge.clientcrud.models;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -14,9 +15,17 @@ public class Client {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String name;
-	private Date birthDate;
+	private LocalDate birthDate;
 	private String phoneNumber;
 	
+	public Client() {}
+	
+	public Client(Long id, String name, LocalDate birthDate, String phoneNumber) {
+		this.id = id;
+		this.name = name;
+		this.birthDate = birthDate;
+		this.phoneNumber = phoneNumber;
+	}
 	
 	public Long getId() {
 		return id;
@@ -30,10 +39,10 @@ public class Client {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Date getBirthDate() {
+	public LocalDate getBirthDate() {
 		return birthDate;
 	}
-	public void setBirthDate(Date birthDate) {
+	public void setBirthDate(LocalDate birthDate) {
 		this.birthDate = birthDate;
 	}
 	public String getPhoneNumber() {
